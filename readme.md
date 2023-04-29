@@ -31,6 +31,8 @@ TIMEZONE= # set your timezone (used to schedule cron jobs e.g.)
 
 ## Deploy Containers
 
+[![asciicast](https://asciinema.org/a/581383.svg)](https://asciinema.org/a/581383)
+
 Start the stack with going to the root of the repo and do:
 
 ```bash
