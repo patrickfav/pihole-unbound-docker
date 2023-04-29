@@ -6,10 +6,17 @@ If you want to learn more about why you want to have exactly this setup, read a 
 
 ## Prepare
 
+### Understand the Setup
+
+This setup works on a machine that does not itself already has DNS running (i.e. port 53 is already used). If you have a setup like that (e.g. running on a Synology NAS with a Directory Server), you would need a setup that creates a [Mac VLAN](https://docs.docker.com/network/macvlan/) so the container appears with a different IP. In this [case check out this example here](https://github.com/chriscrowe/docker-pihole-unbound/tree/main/two-container).
+
+This setup is designed to have 2 containers running next to each other and do not aim to combine both programs in one. The idea is to minimize
+the work needed to adapt provided containerized versions of Pi-hole and Unbound, use the official images, therefore making it easier to upgrade each.
+
 ### Prerequisites
 
 First you need a recent version of [Docker installed](https://docs.docker.com/get-docker/) which at least supports Docker compose v2.
-Further you may want to have a s[erver or IoT device](https://docs.pi-hole.net/main/prerequisites/) where this stack can run on, since this should be reachable by every other client 24/7.
+Further you may want to have a [server or IoT device](https://docs.pi-hole.net/main/prerequisites/) where this stack can run on, since this should be reachable by every other client 24/7.
 Finally, don't forget to change your [default DNS server to the server IPs address of your server](https://docs.pi-hole.net/main/post-install/).
 
 ### Configuration
@@ -21,7 +28,8 @@ WEBPASSWORD= # set the password to use in the Web Admin UI
 HOST_IP_V4_ADDRESS= # the IP of the host the Pi-hole runs on - defaults to localhost
 TIMEZONE= # set your timezone (used to schedule cron jobs e.g.)
 ```
-## Deploy
+
+## Deploy Containers
 
 Start the stack with going to the root of the repo and do:
 
@@ -147,6 +155,14 @@ local-data: "mysite.com. 86400 IN A 192.168.1.1"
 Check here the [full documentation](https://unbound.docs.nlnetlabs.nl/_/downloads/en/latest/pdf/) or [tutorial](https://calomel.org/unbound_dns.html) to learn more.
 
 # Links
+
+## Similar Projects
+
+* [Mac Vlan Setup](https://github.com/chriscrowe/docker-pihole-unbound)
+* [One Container Solution](https://github.com/origamiofficial/docker-pihole-unbound)
+* https://github.com/JD10NN3/docker-pihole-unbound
+
+## Further Information
 
 * [Pi-hole Documentation](https://docs.pi-hole.net/)
 * [Pi-hole Docker](https://github.com/pi-hole/docker-pi-hole)
