@@ -1,6 +1,6 @@
 # DNS Pi-hole & Unbound Stack
 
-This is a docker compose setup which starts a [Pi-hole](https://pi-hole.net/) and [nlnetlab's Unbound](https://nlnetlabs.nl/projects/unbound/about/) as upstream recursive DNS. The main idea here is to add security, [privacy](https://www.cloudflare.com/learning/dns/what-is-recursive-dns/) and have ad and malware protection, everything locally hosted.
+This is a docker compose setup which starts a [Pi-hole](https://pi-hole.net/) and [nlnetlab's Unbound](https://nlnetlabs.nl/projects/unbound/about/) as upstream recursive DNS. The main idea here is to add security, [privacy](https://www.cloudflare.com/learning/dns/what-is-recursive-dns/) and have ad and malware protection, everything hosted locally.
 
 If you want to learn more about why you want to have exactly this setup, read a [detailed explanation here](https://docs.pi-hole.net/guides/dns/unbound/).
 
@@ -10,8 +10,7 @@ If you want to learn more about why you want to have exactly this setup, read a 
 
 This setup works on a machine that does not itself already has DNS running (i.e. port 53 is already used). If you have a setup like that (e.g. running on a Synology NAS with a Directory Server), you would need a setup that creates a [Mac VLAN](https://docs.docker.com/network/macvlan/) so the container appears with a different IP. In this [case check out this example here](https://github.com/chriscrowe/docker-pihole-unbound/tree/main/two-container).
 
-This setup is designed to have 2 containers running next to each other and do not aim to combine both programs in one. The idea is to minimize
-the work needed to adapt provided containerized versions of Pi-hole and Unbound, use the official images, therefore making it easier to upgrade each.
+It is designed to have 2 containers running next to each other and do not aim to combine both programs in one. The idea is to minimize the work needed to adapt provided containerized versions of Pi-hole and Unbound, i.e. use the official images, therefore making it easier to upgrade each.
 
 ### Prerequisites
 
@@ -143,7 +142,7 @@ FROM mvance/unbound:1.17.1
 ...
 ```
 
-## Define Local A-Records 
+### Define Local A-Records 
 
 If you want to resolve certain domains locally you can set A-Records in `./unbound/conf/a-records.conf`. There are already examples, but to add a new record do:
 
@@ -167,9 +166,9 @@ Check here the [full documentation](https://unbound.docs.nlnetlabs.nl/_/download
 
 ## Similar Projects
 
-* [Mac Vlan Setup](https://github.com/chriscrowe/docker-pihole-unbound)
-* [One Container Solution](https://github.com/origamiofficial/docker-pihole-unbound)
-* https://github.com/JD10NN3/docker-pihole-unbound
+* [chriscrowe's Mac Vlan Setup](https://github.com/chriscrowe/docker-pihole-unbound)
+* [origamiofficial's One Container Solution](https://github.com/origamiofficial/docker-pihole-unbound)
+* [JD10NN3's Solution](https://github.com/JD10NN3/docker-pihole-unbound)
 
 ## Further Information
 
