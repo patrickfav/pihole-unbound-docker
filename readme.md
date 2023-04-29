@@ -156,6 +156,13 @@ Check here the [full documentation](https://unbound.docs.nlnetlabs.nl/_/download
 
 # Links
 
+## Credits
+
+* [nlnetlabs Unbound](https://nlnetlabs.nl/projects/unbound/about/) (BSD license)
+* [MatthewVance's Unbound Docker Image](https://github.com/MatthewVance/unbound-docker) (MIT License)
+* [Pi-hole](https://github.com/pi-hole/pi-hole) (European Union Public License)
+* [Official Pi-hole Docker Image](https://github.com/pi-hole/docker-pi-hole) (unknown license)
+
 ## Similar Projects
 
 * [Mac Vlan Setup](https://github.com/chriscrowe/docker-pihole-unbound)
@@ -165,8 +172,6 @@ Check here the [full documentation](https://unbound.docs.nlnetlabs.nl/_/download
 ## Further Information
 
 * [Pi-hole Documentation](https://docs.pi-hole.net/)
-* [Pi-hole Docker](https://github.com/pi-hole/docker-pi-hole)
-* [Unbound Docker](https://github.com/MatthewVance/unbound-docker)
 * [Unbound Documentation](https://unbound.docs.nlnetlabs.nl/_/downloads/en/latest/pdf/)
 * [Pi-hole + Unbound Details](https://docs.pi-hole.net/guides/dns/unbound/)
 * [How to run docker-compose on remote host?](https://stackoverflow.com/questions/35433147/how-to-run-docker-compose-on-remote-host) 
