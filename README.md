@@ -155,6 +155,12 @@ local-data: "mysite.com. 86400 IN A 192.168.1.1"
 
 Check here the [full documentation](https://unbound.docs.nlnetlabs.nl/_/downloads/en/latest/pdf/) or [tutorial](https://calomel.org/unbound_dns.html) to learn more.
 
+### Unbound, Forwarders and Manual Configuration
+
+Unbound is set as a recursive DNS, because all forwarders in `./unbound/conf/a-records.conf` are commented out. If you prefer to use cloudflare or any other public DNS as upstream instead of having the slight performance impact of directly asking the nameservers, then you can enable the respective server by removing the comment (but then using Unbound at all has little value.
+
+If you want to fine-tune the Unbound configuration, you can add the file `./unbound/conf/unbound.conf` (see an [example here](https://github.com/MatthewVance/unbound-docker/blob/master/unbound.conf)) and Unbound will use it.
+
 # Links
 
 ## Credits
