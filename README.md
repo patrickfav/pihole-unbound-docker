@@ -101,8 +101,8 @@ services:
     container_name: ...
 # RECOMMENDED: Uncomment and adapt if you want to persist Pi-hole configurations after restart
 #    volumes:
-#      - "/var/lib/docker/volumes/Pi-hole/Pi-hole:/etc/Pi-hole/"
-#      - "/var/lib/docker/volumes/Pi-hole/dnsmasq.d:/etc/dnsmasq.d/"
+#      - "/var/lib/docker/volumes/pihole/pihole:/etc/pihole/"
+#      - "/var/lib/docker/volumes/pihole/dnsmasq.d:/etc/dnsmasq.d/"
 ```
 
 ### Pi-hole Configurations
