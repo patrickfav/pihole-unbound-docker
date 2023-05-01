@@ -161,6 +161,21 @@ Unbound is set as a recursive DNS, because all forwarders in `./unbound/conf/a-r
 
 If you want to fine-tune the Unbound configuration, you can add the file `./unbound/conf/unbound.conf` (see an [example here](https://github.com/MatthewVance/unbound-docker/blob/master/unbound.conf)) and Unbound will use it.
 
+## Limitations
+
+### Supported Platforms
+
+Currently, this setup will only support platform type `amd64`, that means it will not run on machines that e.g. have an [ARM architecture](https://en.wikipedia.org/wiki/ARM_architecture_family) like the [Raspberry Pi](https://www.raspberrypi.com/documentation/computers/processors.html). While the official Pi-hole image supports [multi-arch](https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/), MatthewVance's unbound image does not. There is, however, a solution: there is a specific build for `arm/v7` which can be found on [Docker hub](https://hub.docker.com/r/mvance/unbound-rpi/tags). Just update the `Dockerfile` in `./unbound/Dockerfile`:
+
+```dockerfile
+FROM mvance/unbound-rpi:1.17.1
+...
+```
+
+### Watchtower
+
+If you use tools like [Watchtower](https://github.com/containrrr/watchtower) to be notified about image updates - this will not work with Unbound here since we re-build it to create a self-contained, stateless image. It is possible to use the image `mvance/unbound` directly in the `docker-compose` and mount the configuration files to unbound instead of pre-building it. See [MatthewVance readme](https://github.com/MatthewVance/unbound-docker) on how to do that.
+
 # Links
 
 ## Credits
