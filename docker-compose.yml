@@ -2,7 +2,7 @@ version: '3.9'
 services:
   pihole:
     container_name: pihole
-    image: pihole/pihole:2023.03.1 # <- update image version here, see: https://github.com/pi-hole/docker-pi-hole/releases
+    image: pihole/pihole:latest # <- update image version here, see: https://github.com/pi-hole/docker-pi-hole/releases
     hostname: pihole.local
     depends_on:
       - unbound
